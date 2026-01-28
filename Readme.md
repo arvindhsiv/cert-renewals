@@ -19,19 +19,27 @@ Never commit private keys (*.key), PFX (*.pfx/*.p12), or cert bundles containing
 - A SAN config file (`.conf`) ready
 
 ## Check OpenSSL:
+```bash
 openssl version
+```
 
 ## Generate Private Key + CSR (SAN Enabled)
+```bash
 openssl req -new -newkey rsa:2048 -nodes \
   -keyout server.key \
   -out server.csr \
   -config example.conf
+```
 
 ## Verify CSR Subject (CN)
+```bash
   openssl req -in server.csr -noout -subject
+```
   
 ## Verify CSR contains SAN
+```bash
   openssl req -in server.csr -noout -text | grep -A2 "Subject Alternative Name"
+```
 
 
 
