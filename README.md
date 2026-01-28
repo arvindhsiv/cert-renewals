@@ -14,7 +14,7 @@ Never commit private keys (*.key), PFX (*.pfx/*.p12), or cert bundles containing
 
 ---
 
-## 1) Prerequisites
+## Prerequisites
 - OpenSSL installed (Mac/Linux usually comes default)
 - A SAN config file (`.conf`) ready
 
