@@ -3,11 +3,13 @@
 This runbook generates a **new private key** and a **CSR with SAN entries** for SSL/TLS certificate issuance.
 
 OpenSSL CSR + SAN config templates used for certificate renewals.
+---
 
 ## Contents
 - CSR generation examples
 - SAN config templates
 - Validation commands
+---
 
 ## Security
 Never commit private keys (*.key), PFX (*.pfx/*.p12), or cert bundles containing private material.
@@ -17,6 +19,8 @@ Never commit private keys (*.key), PFX (*.pfx/*.p12), or cert bundles containing
 ## Prerequisites
 - OpenSSL installed (Mac/Linux usually comes default)
 - A SAN config file (`.conf`) ready
+  
+---
 
 ## Check OpenSSL:
 ```bash
