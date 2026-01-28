@@ -23,15 +23,15 @@ openssl version
 
 ## Generate Private Key + CSR (SAN Enabled)
 openssl req -new -newkey rsa:2048 -nodes \
-  -keyout example_com_2026.key \
-  -out example_com_2026.csr \
-  -config example_2026.conf
+  -keyout server.key \
+  -out server.csr \
+  -config example.conf
 
 ## Verify CSR Subject (CN)
-  openssl req -in example_com_2026.csr -noout -subject
+  openssl req -in server.csr -noout -subject
   
 ## Verify CSR contains SAN
-  openssl req -in example_com_2026.csr -noout -text | grep -A2 "Subject Alternative Name"
+  openssl req -in server.csr -noout -text | grep -A2 "Subject Alternative Name"
 
 
 
