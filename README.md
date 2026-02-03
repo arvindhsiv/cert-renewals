@@ -45,6 +45,22 @@ openssl req -new -newkey rsa:2048 -nodes \
   openssl req -in server.csr -noout -text | grep -A2 "Subject Alternative Name"
 ```
 
+## Convert Cert and Key Files into PFX
+```bash
+  openssl pkcs12 -export \
+  -out certificate.pfx \
+  -inkey private.key \
+  -in certificate.crt \
+  -certfile ca-bundle.crt
+```
 
+## Extract Cert from PFX
+```
+openssl pkcs12 -in yourfile.pfx -clcerts -nokeys -out certificate.crt
+```
 
+## Extract Key from PFX
+```
+openssl pkcs12 -in yourfile.pfx -nocerts -nodes -out private.key
+```
 
